@@ -1,2 +1,23 @@
 ---
 name: CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  function-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - name: Install node dependencies
+        working-directory: 'func-dojo-cicd-skool'
+        run: |
+          npm install
+          npm install @azure/functions
+      - name: Run npm test
+        working-directory: 'func-dojo-cicd-skool'
+        run: |
+          npm test

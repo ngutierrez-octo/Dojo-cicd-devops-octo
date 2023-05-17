@@ -29,6 +29,6 @@ const createLogger = (): Logger => {
   logger.error = () => undefined;
   logger.info = () => undefined;
   logger.verbose = () => undefined;
-  logger.warn = () => {};
+  logger.warn = () => undefined;
   return <Logger>logger;
 };

@@ -16,6 +16,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
+        with:
+          cache: 'npm'
+          cache-dependency-path: func-dojo-cicd-skool/package-lock.json
       - name: Install node dependencies
         run: |
           npm install
@@ -39,6 +42,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           cache: 'npm'
+          cache-dependency-path: func-dojo-cicd-skool/package-lock.json
       - name: Install node dependencies
         working-directory: 'func-dojo-cicd-skool'
         run: |
@@ -68,6 +72,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           cache: 'npm'
+          cache-dependency-path: func-dojo-cicd-skool/package-lock.json
       - name: Install node dependencies
         working-directory: 'func-dojo-cicd-skool'
         run: |
